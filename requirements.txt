@@ -1,0 +1,9 @@
+# Runtime dependencies for the ETA service.
+# Lower bounds only for now; exact versions get frozen after the first
+# successful install on the project machine (see README, "Freezing versions").
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+joblib>=1.4
+fastapi>=0.110
+uvicorn>=0.29
