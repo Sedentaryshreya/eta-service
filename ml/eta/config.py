@@ -131,16 +131,17 @@ class EtaConfig:
         return hour in self.peak_hours
 
 
-# Default settings. ALL VALUES BELOW ARE UNCONFIRMED ASSUMPTIONS.
-#  - Ambulance types BLS / ALS / ICU: UNCONFIRMED (Naga / mentor).
-#  - Peak hours 8-10 and 17-20: UNCONFIRMED (mentor).
-#  - Speeds (25 km/h peak, 40 km/h off-peak, same for every type): UNCONFIRMED
-#    (mentor). These are illustrative averages, not measured data.
+# Default settings.
+#  - Ambulance type: only "BLS" is supported. CONFIRMED by the mentor.
+#    (Adding a type later is one new entry below; no other code changes.)
+#  - Hour format (whole integer) and output rounding (2 decimals): CONFIRMED by
+#    the mentor. They are applied in validation.py and eta.py, not here.
+#  - Peak hours 8-10 and 17-20: UNCONFIRMED assumption (mentor).
+#  - Speeds (25 km/h peak, 40 km/h off-peak): UNCONFIRMED assumption (mentor).
+#    These are illustrative averages, not measured data.
 DEFAULT_CONFIG: EtaConfig = EtaConfig(
     speeds_kmh={
         "BLS": SpeedProfile(peak_kmh=25.0, off_peak_kmh=40.0),
-        "ALS": SpeedProfile(peak_kmh=25.0, off_peak_kmh=40.0),
-        "ICU": SpeedProfile(peak_kmh=25.0, off_peak_kmh=40.0),
     },
     peak_hours=frozenset({8, 9, 10, 17, 18, 19, 20}),
 )

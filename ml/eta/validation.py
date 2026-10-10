@@ -67,8 +67,8 @@ def validate_longitude(value: object, field_name: str = "longitude") -> float:
 def validate_hour(value: object, field_name: str = "hour") -> int:
     """Validate an hour of the day: a whole number from 0 to 23. Returns an int.
 
-    Floats such as ``8.0`` are rejected on purpose (see the Phase 1 plan,
-    decision 3: UNCONFIRMED with Naga).
+    Floats such as ``8.0`` are rejected on purpose. The mentor confirmed that
+    ``hour`` is an integer (still worth mentioning to Naga for the Node side).
     """
     if isinstance(value, bool) or not isinstance(value, Integral):
         raise InvalidInputError(f"{field_name} must be a whole number (integer).")
@@ -85,8 +85,9 @@ def validate_ambulance_type(
 ) -> str:
     """Validate that ``value`` is exactly one of the configured ambulance types.
 
-    The match is case-sensitive and exact (decision 4: UNCONFIRMED with
-    Naga/mentor), so ``"als"`` is rejected when the configured name is ``"ALS"``.
+    The match is case-sensitive and exact, so ``"bls"`` is rejected when the
+    configured name is ``"BLS"``. The mentor confirmed that only ``"BLS"`` is
+    supported for now (casing is still worth confirming with Naga).
     """
     # Check the type first: an unhashable value such as a list would otherwise
     # crash the dictionary lookup below.
