@@ -13,9 +13,9 @@ regression model comparison, and a FastAPI `POST /eta` endpoint.
 ## Status
 
 - Done: project setup, configuration and input validation, Haversine distance
-  and baseline `predict_eta` (`ml/eta/eta.py`).
-- Not built yet: synthetic dataset and baseline evaluation, regression model,
-  FastAPI `POST /eta`.
+  and baseline `predict_eta` (`ml/eta/eta.py`), synthetic dataset and baseline
+  evaluation (`ml/eta/synthetic.py`, `ml/eta/evaluate.py`).
+- Not built yet: regression model, FastAPI `POST /eta`.
 
 ## Setup
 
@@ -52,6 +52,21 @@ print(predict_eta(28.6139, 77.2090, 28.5355, 77.3910, 14, "BLS"))
 - Outputs: `etaMinutes` and `distanceKm`, rounded to 2 decimals.
 - Invalid input raises `InvalidInputError`.
 
+## Synthetic data and baseline evaluation
+
+All trips are **fake**, generated from an invented model. Create the dataset and
+evaluate the baseline (the dataset must exist before `pytest`, because a few tests
+check the saved files):
+
+```bash
+python -m ml.eta.synthetic     # data/synthetic_trips.csv (1000 fake trips, seed 42)
+python -m ml.eta.evaluate      # data/baseline_metrics.json + data/baseline_examples.csv
+```
+
+The reported MAE measures the baseline against the invented synthetic world only.
+It is not a measure of real-world accuracy. Fields, assumptions and limitations
+are in `docs/dataset.md`.
+
 ## Freezing versions
 
 After the first successful install, record exact versions so teammates get
@@ -63,5 +78,5 @@ pip freeze > requirements.lock.txt
 
 ## Project layout
 
-See the roadmap: `ml/eta/` (logic), `api/` (FastAPI), `data/` (CSV files),
-`notebooks/`, `tests/`, `docs/`.
+See the roadmap: `ml/eta/` (logic), `api/` (FastAPI), `data/` (CSV and JSON
+files), `notebooks/`, `tests/`, `docs/`.
