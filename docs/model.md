@@ -64,7 +64,7 @@ Your numbers can differ slightly; the saved `data/model_comparison.json` is the 
 * **Training range.** Training trips are about 0.5 to 22 km. Longer requests are
   extrapolation; the range is saved in the metadata so the API can decide what to do.
 * **Identical points** return 0.0 and 0.0 before the model runs, like the baseline
-  (unconfirmed with the mentor and Naga).
+  (Not yet confirmed with with Naga).
 * **The model's estimates are higher than the baseline's.** The 19.8 km sample trip gets about
   44 minutes from the model and about 30 from the baseline, because the invented world is
   slower than the baseline's assumptions.
@@ -77,8 +77,9 @@ Your numbers can differ slightly; the saved `data/model_comparison.json` is the 
 | `models/eta_linear_regression.json` | Metadata: feature names, coefficients, training rows, training distance range, peak hours, scikit-learn version, a checksum of the model file |
 | `data/model_comparison.json` | The comparison described above |
 
-The model file is created by training and is not committed to Git (check with the project
-lead before committing trained models).
+The trained model files are committed to Git. They only load with the scikit-learn version
+that created them; with any other version `load_model` refuses them (the fix is to retrain),
+so keep the scikit-learn version the same across the team.
 
 ## Train, load, retrain
 

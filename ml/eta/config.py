@@ -136,9 +136,9 @@ class EtaConfig:
 #    (Adding a type later is one new entry below; no other code changes.)
 #  - Hour format (whole integer) and output rounding (2 decimals): CONFIRMED by
 #    the mentor. They are applied in validation.py and eta.py, not here.
-#  - Peak hours 8-10 and 17-20: UNCONFIRMED assumption (mentor).
-#  - Speeds (25 km/h peak, 40 km/h off-peak): UNCONFIRMED assumption (mentor).
-#    These are illustrative averages, not measured data.
+#  - Peak hours 8-10 and 17-20: accepted by the mentor.
+#  - Speeds (25 km/h peak, 40 km/h off-peak): accepted by the mentor. They are
+#    still illustrative averages, not measured data.
 DEFAULT_CONFIG: EtaConfig = EtaConfig(
     speeds_kmh={
         "BLS": SpeedProfile(peak_kmh=25.0, off_peak_kmh=40.0),

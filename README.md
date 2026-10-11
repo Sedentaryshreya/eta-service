@@ -88,9 +88,9 @@ loaded = load_model()
 print(predict_eta_with_model(loaded, 28.6139, 77.2090, 28.5355, 77.3910, 14, "BLS"))
 ```
 
-The model file is not committed; create it with the command above. Its error is
-measured on synthetic data only. See `docs/model.md` for the features, results,
-limits and how to retrain.
+The trained model is committed in `models/`; recreate it with the command above after
+changing the data or upgrading scikit-learn. Its error is measured on synthetic data
+only. See `docs/model.md` for the features, results, limits and how to retrain.
 
 ## Freezing versions
 
@@ -104,4 +104,4 @@ pip freeze > requirements.lock.txt
 ## Project layout
 
 See the roadmap: `ml/eta/` (logic), `api/` (FastAPI), `data/` (CSV and JSON
-files), `models/` (trained model, not committed), `notebooks/`, `tests/`, `docs/`.
+files), `models/` (trained model), `notebooks/`, `tests/`, `docs/`.

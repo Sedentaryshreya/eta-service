@@ -100,8 +100,7 @@ the spread of the data really matches this value (`NOISE_SIGMA` in `synthetic.py
 * **The baseline and the dataset use two different sets of invented numbers.** The baseline
   assumes 25 or 40 km/h on straight lines; the dataset has detours, road types, traffic and
   start-up time. A large gap between them says the two sets of assumptions disagree, not that
-  one of them is right. The baseline's speeds and peak hours are themselves unconfirmed
-  assumptions.
+  one of them is right. The baseline's speeds and peak hours are themselves assumptions(accepted by the mentor,not measured).
 * **The dataset agrees with the baseline about which hours are busy.** Rush hours are the
   same as the baseline's peak hours. This makes the baseline's hour assumption look better
   than it may be in reality.
@@ -117,5 +116,7 @@ the spread of the data really matches this value (`NOISE_SIGMA` in `synthetic.py
 * **Reproducibility.** The same code, seed and library versions give the same dataset. A
   different NumPy version may in principle give slightly different random numbers (and so a
   slightly different MAE).
-* **Unconfirmed with the mentor / Naga:** the peak hours, the baseline speeds, and the
-  decision to return 0.0 for identical start and end points.
+* **Accepted by the mentor:** the peak hours, the baseline speeds, and the integer hour.
+  They are still assumptions, not measured data. **Not yet confirmed with Naga:** the
+  decision to return 0.0 for identical start and end points, and that `BLS` must be
+  exactly uppercase.
