@@ -3,7 +3,9 @@
 # successful install on the project machine (see README, "Freezing versions").
 numpy>=2.0
 pandas>=2.2
-scikit-learn>=1.5
+# Pinned exactly: the committed model in models/ only loads with the scikit-learn
+# version that trained it (see docs/model.md).
+scikit-learn==1.9.1
 joblib>=1.4
 fastapi>=0.110
 uvicorn>=0.29
