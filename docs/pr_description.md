@@ -72,7 +72,7 @@ Evidence (run by the author on Windows, Python 3.13.7, 12 Oct 2026):
 - [x] Naga confirmed the three contract points (reported by the author; reply not stored).
 - [x] README, API contract, dataset, test plan, demo script and limitations are written.
 - [ ] A linter and type checker (for example `ruff`, `mypy`) were NOT run. Run them if the team uses them.
-- [ ] Fresh-clone install check: fill in the result after running it.
+-  [x] Fresh-clone check (13 Oct 2026): a new clone with a new virtual environment, installed from `requirements-dev.txt`, gave 598 passed. It installed slightly newer packages than `requirements.lock.txt` (for example pydantic 2.14.1 and numpy 2.5.4) and still passed.
 - [ ] Branch name follows the lead's naming rules: not yet known.
 - [ ] Pushed and Pull Request opened: blocked on the lead's repository details.
 - [ ] Not tested: load, other operating systems, the Node.js caller.
