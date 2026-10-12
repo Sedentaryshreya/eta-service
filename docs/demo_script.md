@@ -36,14 +36,14 @@ Bad request, hour sent as text (expect a 422 that does not repeat the value):
 python -c "import httpx;r=httpx.post('http://127.0.0.1:8000/eta',json={'fromLat':28.6139,'fromLng':77.2090,'toLat':28.5355,'toLng':77.3910,'hour':'8','ambulanceType':'BLS'});print(r.status_code,r.text)"
 ```
 
-Very long trip, about 50 km (expect `200 baseline`, because it is outside the trained range):
+Very long trip, about 50 km (expect `200 baseline {"etaMinutes":74.47,"distanceKm":49.65}`, because it is outside the trained range):
 
 ```
 python -c "import httpx;r=httpx.post('http://127.0.0.1:8000/eta',json={'fromLat':28.6139,'fromLng':77.2090,'toLat':28.9,'toLng':77.6,'hour':14,'ambulanceType':'BLS'});print(r.status_code,r.headers.get('x-eta-source'),r.text)"
 ```
 
-The third request has not been run by the author yet. Run it once before the demo and check the
-output with your own eyes.
+The third request was run on 13 Oct 2026 and returned
+`200 baseline {"etaMinutes":74.47,"distanceKm":49.65}`.
 
 ## Likely questions
 
