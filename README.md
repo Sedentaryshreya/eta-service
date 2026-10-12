@@ -105,3 +105,14 @@ pip freeze > requirements.lock.txt
 
 See the roadmap: `ml/eta/` (logic), `api/` (FastAPI), `data/` (CSV and JSON
 files), `models/` (trained model), `notebooks/`, `tests/`, `docs/`.
+## Run the API (Phase 5)
+
+```
+uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
+
+Then open http://127.0.0.1:8000/docs. `POST /eta` takes `fromLat`, `fromLng`, `toLat`, `toLng`,
+`hour` (integer) and `ambulanceType` (`"BLS"`) and returns `etaMinutes` and `distanceKm`.
+The learned model answers when it can; otherwise the baseline answers (header `X-ETA-Source`
+says which). Full details: `docs/api_contract.md`. Estimates only, from fake data; not for
+real dispatch.

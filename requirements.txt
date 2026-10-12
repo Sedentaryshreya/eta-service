@@ -7,5 +7,5 @@ pandas>=2.2
 # version that trained it (see docs/model.md).
 scikit-learn==1.9.1
 joblib>=1.4
-fastapi>=0.110
-uvicorn>=0.29
+   fastapi==0.143.0
+   uvicorn>=0.30
