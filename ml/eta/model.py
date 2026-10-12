@@ -357,7 +357,7 @@ def predict_eta_with_model(
 
     Returns ``{"etaMinutes": float, "distanceKm": float}`` rounded to 2 decimals.
     Identical start and end points return 0.0 and 0.0 BEFORE the model runs, exactly
-    like the baseline (UNCONFIRMED with mentor/Naga).
+    like the baseline (CONFIRMED with mentor).
 
     Raises:
         InvalidInputError: bad request values (checked first, never hidden).

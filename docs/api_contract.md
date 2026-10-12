@@ -46,7 +46,7 @@ outside the range the model was trained on (about 0.52 to 21.99 km, including id
 end points); or the model failed on that request.
 
 Identical start and end points return `{"etaMinutes": 0.0, "distanceKm": 0.0}`
-(**unconfirmed with Naga**).
+(confirmed by Naga, as reported on 12 Oct 2026).
 
 ## Errors
 
@@ -70,8 +70,10 @@ Invalid input returns HTTP **422** in the usual FastAPI shape, but without the s
 
 `modelLoaded` is `false` when the service is running on the baseline only.
 
-## Open points for Naga
+## Confirmed with Mentor
 
-1. Identical start and end points return `0.0` / `0.0`: is that acceptable?
+Reported on 12 Oct 2026 (the reply itself is not stored in this repository):
+
+1. Identical start and end points return `0.0` / `0.0`.
 2. `ambulanceType` must be exactly `"BLS"`.
-3. `hour` must be a JSON integer. If the Node side sends `8.0` or `"8"` it will get a 422.
+3. `hour` must be a JSON integer. `8.0` or `"8"` gets a 422.

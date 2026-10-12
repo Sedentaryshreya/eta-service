@@ -2,8 +2,8 @@
 
 IMPORTANT: every speed and peak-hour value in this file is an ASSUMPTION made
 for a student project. None of it is measured traffic data, and it must not be
-described as validated real-world behaviour. Values marked UNCONFIRMED still
-need confirmation from the mentor and/or Naga Siddeswar.
+described as validated real-world behaviour. The peak hours and speeds were
+accepted by the mentor, but they are still assumptions, not measured data.
 
 This module only holds settings and checks that the settings make sense.
 It does not calculate distances or ETAs.

@@ -116,3 +116,71 @@ Then open http://127.0.0.1:8000/docs. `POST /eta` takes `fromLat`, `fromLng`, `t
 The learned model answers when it can; otherwise the baseline answers (header `X-ETA-Source`
 says which). Full details: `docs/api_contract.md`. Estimates only, from fake data; not for
 real dispatch.
+## Sample request and response
+
+Start the server (project folder, virtual environment active):
+
+```
+uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
+
+Send a request from a second terminal (this exact call was run and returned the output below):
+
+```
+python -c "import httpx;r=httpx.post('http://127.0.0.1:8000/eta',json={'fromLat':28.6139,'fromLng':77.2090,'toLat':28.5355,'toLng':77.3910,'hour':14,'ambulanceType':'BLS'});print(r.status_code,r.headers.get('x-eta-source'),r.text)"
+```
+
+```
+200 model {"etaMinutes":44.11,"distanceKm":19.8}
+```
+
+With `hour` sent as the text `"8"`, the API refuses it without repeating the value:
+
+```
+422 {"detail":[{"loc":["body","hour"],"msg":"hour must be a whole number (integer).","type":"value_error"}]}
+```
+
+These numbers come from a model trained on fake data. They are estimates, not guaranteed arrival times.
+
+## More documentation
+
+* `docs/api_contract.md`: request, response, errors and confirmed points.
+* `docs/test_plan.md`: 42 documented test cases and what is not tested.
+* `docs/dataset.md` and `docs/model.md`: the fake dataset and how the model is compared.
+* `docs/limitations_and_blockers.md`: what is still open.
+* `docs/demo_script.md`: a 5-minute demo.
+* `notebooks/eta_baseline_and_models.ipynb`: results and sample calls, runs top to bottom.
+## Sample request and response
+
+Start the server (project folder, virtual environment active):
+
+```
+uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
+
+Send a request from a second terminal (this exact call was run and returned the output below):
+
+```
+python -c "import httpx;r=httpx.post('http://127.0.0.1:8000/eta',json={'fromLat':28.6139,'fromLng':77.2090,'toLat':28.5355,'toLng':77.3910,'hour':14,'ambulanceType':'BLS'});print(r.status_code,r.headers.get('x-eta-source'),r.text)"
+```
+
+```
+200 model {"etaMinutes":44.11,"distanceKm":19.8}
+```
+
+With `hour` sent as the text `"8"`, the API refuses it without repeating the value:
+
+```
+422 {"detail":[{"loc":["body","hour"],"msg":"hour must be a whole number (integer).","type":"value_error"}]}
+```
+
+These numbers come from a model trained on fake data. They are estimates, not guaranteed arrival times.
+
+## More documentation
+
+* `docs/api_contract.md`: request, response, errors and confirmed points.
+* `docs/test_plan.md`: 42 documented test cases and what is not tested.
+* `docs/dataset.md` and `docs/model.md`: the fake dataset and how the model is compared.
+* `docs/limitations_and_blockers.md`: what is still open.
+* `docs/demo_script.md`: a 5-minute demo.
+* `notebooks/eta_baseline_and_models.ipynb`: results and sample calls, runs top to bottom.

@@ -106,7 +106,7 @@ def predict_eta(
     Returns:
         ``{"etaMinutes": float, "distanceKm": float}``, both non-negative and
         rounded to 2 decimals. Identical start and end points are valid and give
-        0.0 for both (UNCONFIRMED with mentor/Naga). The ETA is computed from the
+        0.0 for both (CONFIRMED with mentor). The ETA is computed from the
         unrounded distance, so do not recompute it from the rounded distanceKm.
 
     Raises:
