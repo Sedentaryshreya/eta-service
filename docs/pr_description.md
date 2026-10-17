@@ -74,5 +74,5 @@ Evidence (run by the author on Windows, Python 3.13.7, 12 Oct 2026):
 - [ ] A linter and type checker (for example `ruff`, `mypy`) were NOT run. Run them if the team uses them.
 -  [x] Fresh-clone check (13 Oct 2026): a new clone with a new virtual environment, installed from `requirements-dev.txt`, gave 598 passed. It installed slightly newer packages than `requirements.lock.txt` (for example pydantic 2.14.1 and numpy 2.5.4) and still passed.
 - [x] Repository: the mentor said to use the author's own repository, so the lead's naming rules do not apply.
-- [ ] Pushed to the author's own repository: to do once the repository is created.
+- [x] Pushed to the author's own repository (github.com/Sedentaryshreya/eta-service, branch feature/eta-baseline) on 17 Oct 2026.
 - [ ] Not tested: load, other operating systems, the Node.js caller.
