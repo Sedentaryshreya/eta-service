@@ -1,7 +1,7 @@
 # Pull Request draft
 
-Paste this into the Pull Request once the remote repository and the branch naming rules are
-known. Fill in the `[ ]` items that are still open before submitting.
+Use this as the description when the work is pushed to the author's own repository (a Pull
+Request is optional). Fill in the `[ ]` items that are still open before submitting.
 
 ## Title
 
@@ -73,6 +73,6 @@ Evidence (run by the author on Windows, Python 3.13.7, 12 Oct 2026):
 - [x] README, API contract, dataset, test plan, demo script and limitations are written.
 - [ ] A linter and type checker (for example `ruff`, `mypy`) were NOT run. Run them if the team uses them.
 -  [x] Fresh-clone check (13 Oct 2026): a new clone with a new virtual environment, installed from `requirements-dev.txt`, gave 598 passed. It installed slightly newer packages than `requirements.lock.txt` (for example pydantic 2.14.1 and numpy 2.5.4) and still passed.
-- [ ] Branch name follows the lead's naming rules: not yet known.
-- [ ] Pushed and Pull Request opened: blocked on the lead's repository details.
+- [x] Repository: the mentor said to use the author's own repository, so the lead's naming rules do not apply.
+- [ ] Pushed to the author's own repository: to do once the repository is created.
 - [ ] Not tested: load, other operating systems, the Node.js caller.

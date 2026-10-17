@@ -4,11 +4,10 @@
 > **fake (synthetic) data** and is not a validation against real traffic. This service is not
 > for real emergency dispatch.
 
-## Blockers (someone else must act)
+## Blockers
 
-| # | Blocker | Who | Status |
-|---|---|---|---|
-| 1 | Remote repository and branch naming rules, needed before pushing and opening the Pull Request | Project lead | Lead replied "follow the naming rules" on 12 Oct 2026; the rules themselves have not been shared yet. Nothing has been pushed. |
+None. The mentor told Shreya (reported by Shreya, 16 to 17 Oct 2026) not to wait for the lead's
+repository and to create her own repository instead.
 
 Confirmed with Naga (reported by Shreya on 12 Oct 2026; the reply itself is not stored in this
 repository): identical points return `0.0` / `0.0`, `ambulanceType` must be exactly `"BLS"`, and

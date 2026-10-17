@@ -18,7 +18,7 @@
 | 1:30 to 2:30 | Open `data/baseline_metrics.json`, then `data/model_comparison.json` | "On 1000 invented trips the baseline is off by 11.22 minutes on average. Linear Regression is off by 9.80, a gain of 1.42 minutes. But it is worse in peak hours, 12.77 against 12.11. This is only how they do on invented data." |
 | 2:30 to 3:30 | Terminal 1: start the server. Terminal 2: run the two requests below | "The API uses the model when it can. The `X-ETA-Source` header says whether the model or the baseline answered. Bad input gets a 422 that never repeats what was sent." |
 | 3:30 to 4:15 | Terminal 2: `pytest tests\test_api.py -q -k "missing_model or damaged or failing"` | "If the model file is missing, damaged, or fails during a request, the baseline answers instead and the API still returns 200. These tests break the model on purpose to prove it." |
-| 4:15 to 5:00 | Terminal 2: `pytest -q`, then open `docs/limitations_and_blockers.md` | "598 tests pass. Open points: the jump of 11 to 16 minutes where the model hands over to the baseline above about 22 km, the peak-hour result, and the repository rules from the lead." |
+| 4:15 to 5:00 | Terminal 2: `pytest -q`, then open `docs/limitations_and_blockers.md` | "598 tests pass. Open points: the jump of 11 to 16 minutes where the model hands over to the baseline above about 22 km, and the peak-hour result." |
 
 Stop the server with Ctrl+C when you are done.
 
