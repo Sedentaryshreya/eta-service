@@ -184,3 +184,5 @@ These numbers come from a model trained on fake data. They are estimates, not gu
 * `docs/limitations_and_blockers.md`: what is still open.
 * `docs/demo_script.md`: a 5-minute demo.
 * `notebooks/eta_baseline_and_models.ipynb`: results and sample calls, runs top to bottom.
+* `docs/data_inspection.md`: what data exists, what is missing, and what real data would be needed
+* `docs/error_analysis.md`: errors by distance, traffic level and road type

@@ -34,6 +34,9 @@ repository): identical points return `0.0` / `0.0`, `ambulanceType` must be exac
   0.43 to 2.37). **In peak hours it is worse** than the baseline in this sample (12.77 against
   12.11). Whether that peak difference is real was not tested.
 * The baseline is too low on average by 8.30 minutes, because the invented world has detours.
+* **On highways the model is worse than the baseline** (12.60 against 5.66 minutes, 40 trips), while
+  on local roads it is better (13.52 against 21.30). Neither method receives the road type or the
+  traffic level. Details: `docs/error_analysis.md`. Whether the differences are real was not tested.
 * None of this shows real-world accuracy.
 
 ### Behaviour at the edges

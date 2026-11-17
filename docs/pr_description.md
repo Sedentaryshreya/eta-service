@@ -35,7 +35,7 @@ uvicorn api.main:app --host 127.0.0.1 --port 8000
 
 Evidence (run by the author on Windows, Python 3.13.7, 12 Oct 2026):
 
-* `pytest -q`: 598 passed, 1 warning (a harmless `httpx` deprecation notice).
+* `pytest -q`: 602 passed, 1 warning (a harmless `httpx` deprecation notice).
 * Live check: valid request gave `200 model {"etaMinutes":44.11,"distanceKm":19.8}`; hour sent as
   text gave the expected 422.
 * Test plan with 42 documented cases: `docs/test_plan.md`.
@@ -65,7 +65,7 @@ Evidence (run by the author on Windows, Python 3.13.7, 12 Oct 2026):
 
 ## Author self-review
 
-- [x] Tests run and pass on the author's machine (598 passed).
+- [x] Tests run and pass on the author's machine (602 passed, re-run on 17 Nov 2026).
 - [x] Errors and invalid input handled and tested; error messages never echo submitted values.
 - [x] No debug prints, TODO or FIXME markers; a simple scan found no unused imports.
 - [x] Synthetic data labelled everywhere; no claim of real-world accuracy.
